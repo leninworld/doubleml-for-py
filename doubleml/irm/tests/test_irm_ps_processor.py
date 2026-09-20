@@ -93,8 +93,8 @@ def test_irm_retains_raw_propensity_from_external_predictions(generate_data_irm)
 
 
 @pytest.mark.ci
-def test_irm_raw_propensity_lifecycle_without_stored_predictions(generate_data_irm):
-    """Populate and reset raw propensity independently of stored nuisance predictions."""
+def test_irm_raw_propensity_lifecycle_respects_store_predictions(generate_data_irm):
+    """Store and reset raw propensity only when nuisance predictions are stored."""
     x, y, d = generate_data_irm
     dml_data = DoubleMLData.from_arrays(x=x, y=y, d=d)
     dml_irm = DoubleMLIRM(
@@ -107,11 +107,14 @@ def test_irm_raw_propensity_lifecycle_without_stored_predictions(generate_data_i
 
     first_raw = np.full((dml_data.n_obs, 1), 0.2)
     dml_irm.fit(store_predictions=False, external_predictions={"d": {"ml_m": first_raw}})
-    np.testing.assert_array_equal(dml_irm.raw_propensity[:, :, 0], first_raw)
+    assert dml_irm.raw_propensity is None
 
     second_raw = np.full((dml_data.n_obs, 1), 0.8)
-    dml_irm.fit(store_predictions=False, external_predictions={"d": {"ml_m": second_raw}})
+    dml_irm.fit(store_predictions=True, external_predictions={"d": {"ml_m": second_raw}})
     np.testing.assert_array_equal(dml_irm.raw_propensity[:, :, 0], second_raw)
+
+    dml_irm.fit(store_predictions=False, external_predictions={"d": {"ml_m": first_raw}})
+    assert dml_irm.raw_propensity is None
 
 
 @pytest.mark.ci
@@ -135,7 +138,7 @@ def test_irm_raw_propensity_does_not_change_fit_results(generate_data_irm):
     unstored.fit(store_predictions=False, external_predictions=external_predictions)
 
     assert unstored.predictions is None
+    assert unstored.raw_propensity is None
     np.testing.assert_array_equal(stored.predictions["ml_m"], stored.raw_propensity)
-    np.testing.assert_allclose(unstored.raw_propensity, stored.raw_propensity)
     np.testing.assert_allclose(unstored.coef, stored.coef)
     np.testing.assert_allclose(unstored.se, stored.se)

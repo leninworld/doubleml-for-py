@@ -216,7 +216,8 @@ class DoubleMLIRM(LinearScoreMixin, DoubleML):
 
         The array has shape (``n_obs``, ``n_rep``, ``n_coefs``). A copy is
         returned so callers cannot mutate the fitted model state. The value is
-        ``None`` before :meth:`fit` is called.
+        ``None`` before :meth:`fit` is called or when fitting with
+        ``store_predictions=False``.
         """
         if self._raw_propensity is None:
             return None
@@ -269,7 +270,7 @@ class DoubleMLIRM(LinearScoreMixin, DoubleML):
 
     def _initalize_fit(self, store_predictions, store_models):
         super()._initalize_fit(store_predictions, store_models)
-        self._raw_propensity = np.full(self._score_dim, np.nan)
+        self._raw_propensity = np.full(self._score_dim, np.nan) if store_predictions else None
 
     def _get_weights(self, m_hat=None):
         # standard case for ATE
@@ -381,7 +382,8 @@ class DoubleMLIRM(LinearScoreMixin, DoubleML):
             )
             _check_finite_predictions(m_hat["preds"], self._learner["ml_m"], "ml_m", smpls)
 
-        self._raw_propensity[:, self._i_rep, self._i_treat] = m_hat["preds"].copy()
+        if self._raw_propensity is not None:
+            self._raw_propensity[:, self._i_rep, self._i_treat] = m_hat["preds"].copy()
         m_hat["preds"] = self._ps_processor.adjust_ps(m_hat["preds"], d, cv=smpls, learner_name="ml_m")
 
         psi_a, psi_b = self._score_elements(y, d, g_hat0["preds"], g_hat1["preds"], m_hat["preds"], smpls)
