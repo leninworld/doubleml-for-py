@@ -1,0 +1,212 @@
+[
+  {
+    "path": "doc/examples/R_double_ml_basic_iv.ipynb",
+    "oid": "1d0df3aec7600fe26679df2abf1192f69427027c",
+    "bytes": 6141
+  },
+  {
+    "path": "doc/examples/R_double_ml_basics.ipynb",
+    "oid": "c63903ba0a2fc036126061252b52eb8d7a22ecc3",
+    "bytes": 69631
+  },
+  {
+    "path": "doc/examples/R_double_ml_did.ipynb",
+    "oid": "6859e8e7c8cedd2517b0e3c234305213530d6726",
+    "bytes": 17757
+  },
+  {
+    "path": "doc/examples/R_double_ml_multiway_cluster.ipynb",
+    "oid": "67e62f032255c9ddd88d840e887e2921a6a0f8ca",
+    "bytes": 163749
+  },
+  {
+    "path": "doc/examples/R_double_ml_pension.ipynb",
+    "oid": "22e708bf0eca0be3fb01670901d8ff724c4c6b2e",
+    "bytes": 200821
+  },
+  {
+    "path": "doc/examples/R_double_ml_pipeline.ipynb",
+    "oid": "f19b82f6aee5ecbc15f7260a0a8a82ab351b7a8e",
+    "bytes": 114569
+  },
+  {
+    "path": "doc/examples/R_double_ml_ssm.ipynb",
+    "oid": "0e426b4724c640062dc5453a3431de6f98108304",
+    "bytes": 48828
+  },
+  {
+    "path": "doc/examples/did/py_did.ipynb",
+    "oid": "631d9ffab8afee4193e05aebb9e4b3b7b1866812",
+    "bytes": 85594
+  },
+  {
+    "path": "doc/examples/did/py_did_pretest.ipynb",
+    "oid": "70546e261e9fbf92c8245aca7961c3f8750776bf",
+    "bytes": 9559
+  },
+  {
+    "path": "doc/examples/did/py_panel.ipynb",
+    "oid": "e2ecc62d69e91088f38ca03d58cfef2bd969f5f5",
+    "bytes": 30183
+  },
+  {
+    "path": "doc/examples/did/py_panel_data_example.ipynb",
+    "oid": "0f87e648d4ff50f213daa7a71df6bf027be1690a",
+    "bytes": 16878
+  },
+  {
+    "path": "doc/examples/did/py_panel_simple.ipynb",
+    "oid": "a85037462d25247da624a3aaa99cc98045d5c0bf",
+    "bytes": 10966
+  },
+  {
+    "path": "doc/examples/did/py_rep_cs.ipynb",
+    "oid": "888a4eddc6024d27a55ef2614b55d258bfa6150b",
+    "bytes": 30464
+  },
+  {
+    "path": "doc/examples/double_ml_bonus_data.ipynb",
+    "oid": "82d0626b06268cea0b647fc5993b276bf2ad3315",
+    "bytes": 22839
+  },
+  {
+    "path": "doc/examples/learners/py_learner.ipynb",
+    "oid": "f6d0d106f786be34f0bfcdfb44917f07ca70618f",
+    "bytes": 210692
+  },
+  {
+    "path": "doc/examples/learners/py_optuna.ipynb",
+    "oid": "c861bf8ae05c597187f6e03de993d6ef6cbe99dc",
+    "bytes": 5124466
+  },
+  {
+    "path": "doc/examples/learners/py_tabpfn.ipynb",
+    "oid": "31304bec6f3654af41b4201811f33c208acad78e",
+    "bytes": 227715
+  },
+  {
+    "path": "doc/examples/py_double_ml_apo.ipynb",
+    "oid": "07aed8d53896da0d3f359f84cb32d282e2952efe",
+    "bytes": 18781
+  },
+  {
+    "path": "doc/examples/py_double_ml_basic_iv.ipynb",
+    "oid": "e34a4c4251e21c29017783ed8359fa1e7c9ffa76",
+    "bytes": 6180
+  },
+  {
+    "path": "doc/examples/py_double_ml_basics.ipynb",
+    "oid": "e52eadb928f5ced17e52e9cc74e04b8f0d429b66",
+    "bytes": 324913
+  },
+  {
+    "path": "doc/examples/py_double_ml_cate.ipynb",
+    "oid": "9750ce099dd0cd8618e725fe4ce180e342920c10",
+    "bytes": 13034
+  },
+  {
+    "path": "doc/examples/py_double_ml_cate_plr.ipynb",
+    "oid": "c0d369cb9312d947c9d213983ca87a7e54261690",
+    "bytes": 12689
+  },
+  {
+    "path": "doc/examples/py_double_ml_cvar.ipynb",
+    "oid": "ae954b2493fb72275d6ad8fdf9b37b1ddc427147",
+    "bytes": 193676
+  },
+  {
+    "path": "doc/examples/py_double_ml_firststage.ipynb",
+    "oid": "0bb336c708c3a6bd3148865e6ba2a316719fab77",
+    "bytes": 10559
+  },
+  {
+    "path": "doc/examples/py_double_ml_gate.ipynb",
+    "oid": "49a7619e1c52dad0e5ca1dd6dbd8c4b5eb5b092f",
+    "bytes": 9304
+  },
+  {
+    "path": "doc/examples/py_double_ml_gate_plr.ipynb",
+    "oid": "6588da28c47d4b7584fb79afd72065ee84e1744d",
+    "bytes": 9233
+  },
+  {
+    "path": "doc/examples/py_double_ml_gate_sensitivity.ipynb",
+    "oid": "673bb9e616a4034bcc01117297dbbc085d0c3dcc",
+    "bytes": 11555
+  },
+  {
+    "path": "doc/examples/py_double_ml_irm_vs_apo.ipynb",
+    "oid": "6c03ab5be373c385ce5f80a8fe885e97693f6198",
+    "bytes": 20828
+  },
+  {
+    "path": "doc/examples/py_double_ml_lplr.ipynb",
+    "oid": "843146a43c21fc220bc8507efd22bce7a978086d",
+    "bytes": 314451
+  },
+  {
+    "path": "doc/examples/py_double_ml_meets_flaml.ipynb",
+    "oid": "2aee0b790d8ac42209e832ef01c637856d322193",
+    "bytes": 127875
+  },
+  {
+    "path": "doc/examples/py_double_ml_multiway_cluster.ipynb",
+    "oid": "d808a9e353cc1675373184ea1834158e48f18e02",
+    "bytes": 39587
+  },
+  {
+    "path": "doc/examples/py_double_ml_pension.ipynb",
+    "oid": "136818b2cac64b29c4b4cf688225b88045f5da3f",
+    "bytes": 41397
+  },
+  {
+    "path": "doc/examples/py_double_ml_pension_qte.ipynb",
+    "oid": "09fedc0570d5cdd52860b78d8f8accc856791958",
+    "bytes": 395613
+  },
+  {
+    "path": "doc/examples/py_double_ml_plm_irm_hetfx.ipynb",
+    "oid": "b8fe16e1105009b031a28cfddf303fb4911f1058",
+    "bytes": 13926
+  },
+  {
+    "path": "doc/examples/py_double_ml_plpr.ipynb",
+    "oid": "17616ee23876d491c88949860830ddfa93ab0d74",
+    "bytes": 187785
+  },
+  {
+    "path": "doc/examples/py_double_ml_policy_tree.ipynb",
+    "oid": "99bf7e0f088ba67e7306d2681ac4627448ee94b6",
+    "bytes": 10902
+  },
+  {
+    "path": "doc/examples/py_double_ml_pq.ipynb",
+    "oid": "c8f9389c181703bbc4d249db699baf03c4094956",
+    "bytes": 427697
+  },
+  {
+    "path": "doc/examples/py_double_ml_rdflex.ipynb",
+    "oid": "06abf4a09c7226d98f64f0ed875f927f6029a7ab",
+    "bytes": 5012368
+  },
+  {
+    "path": "doc/examples/py_double_ml_robust_iv.ipynb",
+    "oid": "3cf4735589a05788da255e55514fca017e7a82be",
+    "bytes": 10161
+  },
+  {
+    "path": "doc/examples/py_double_ml_sensitivity.ipynb",
+    "oid": "6df3853f03883e98246672d9018340d82fe1c68f",
+    "bytes": 17979
+  },
+  {
+    "path": "doc/examples/py_double_ml_sensitivity_booking.ipynb",
+    "oid": "60fcdb0bba4d8a09dc0838967774d73eca0cfaa8",
+    "bytes": 30172
+  },
+  {
+    "path": "doc/examples/py_double_ml_ssm.ipynb",
+    "oid": "57451c3bb2fbb0b598067e2a90531ace86f86ce9",
+    "bytes": 73481
+  }
+]
