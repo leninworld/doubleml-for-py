@@ -1,0 +1,48 @@
+name: DoubleML 364 prerequisite probe
+on:
+  push:
+    branches: [validate-ps-api-364-g0]
+permissions:
+  contents: read
+concurrency:
+  group: doubleml364-g0
+  cancel-in-progress: false
+jobs:
+  prerequisites:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - name: Anchor the one attempt before checkout
+        run: |
+          python3 - <<'PY'
+          import os,pathlib,time
+          routes=[r.split()[0] for r in pathlib.Path('/proc/net/route').read_text().splitlines()[1:] if r.split()[1]=='00000000']
+          assert len(set(routes))==1
+          rx=pathlib.Path('/sys/class/net')/routes[0]/'statistics/rx_bytes'
+          with open(os.environ['GITHUB_ENV'],'a') as f:
+              f.write(f'PROBE_STARTED_EPOCH={time.time()}\nPROBE_RX_PATH={rx}\nPROBE_RX_START={rx.read_text().strip()}\n')
+          PY
+      - name: Checkout exact diagnostic packet
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          path: packet
+          persist-credentials: false
+      - name: Tiny Docker helper fixture before expensive downloads
+        run: python3 packet/host.py fixture
+      - name: Checkout exact unmodified core
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: DoubleML/doubleml-for-py
+          ref: a3493c3b7a444b6ddd730ad05c2c0e6c67ac19c3
+          path: core
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Checkout exact docs including all raw notebooks
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: DoubleML/doubleml-docs
+          ref: ba5235234dc47c5d2653dbc54358d92c1af7058d
+          path: docs
+          persist-credentials: false
+      - name: Probe real docs image and resolve the full proposed dependency inputs
+        run: python3 packet/host.py probe
